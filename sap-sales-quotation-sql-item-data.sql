@@ -1,0 +1,36 @@
+CREATE TABLE `sap-sales-quotation-item-data`
+(
+  "SalesQuotation"                 varchar(10) DEFAULT NULL,
+  "SalesQuotationItem"             varchar(6) DEFAULT NULL,
+  "SalesQuotationItemCategory"     varchar(4) DEFAULT NULL,
+  "SalesQuotationItemText"         varchar(40) DEFAULT NULL,
+  "PurchaseOrderByCustomer"        varchar(35) DEFAULT NULL,
+  "Material"                       varchar(40) DEFAULT NULL,
+  "MaterialByCustomer"             varchar(35) DEFAULT NULL,
+  "RequestedQuantity"              varchar(17) DEFAULT NULL,
+  "RequestedQuantityUnit"          varchar(3) DEFAULT NULL,
+  "ItemOrderProbabilityInPercent"  varchar(3) DEFAULT NULL,
+  "ItemGrossWeight"                varchar(17) DEFAULT NULL,
+  "ItemNetWeight"                  varchar(17) DEFAULT NULL,
+  "ItemWeightUnit"                 varchar(3) DEFAULT NULL,
+  "ItemVolume"                     varchar(17) DEFAULT NULL,
+  "ItemVolumeUnit"                 varchar(3) DEFAULT NULL,
+  "TransactionCurrency"            varchar(5) DEFAULT NULL,
+  "NetAmount"                      varchar(13) DEFAULT NULL,
+  "MaterialGroup"                  varchar(9) DEFAULT NULL,
+  "MaterialPricingGroup"           varchar(2) DEFAULT NULL,
+  "Batch"                          varchar(10) DEFAULT NULL,
+  "Plant"                          varchar(4) DEFAULT NULL,
+  "IncotermsClassification"        varchar(3) DEFAULT NULL,
+  "CustomerPaymentTerms"           varchar(4) DEFAULT NULL,
+  "ProductTaxClassification1"      varchar(1) DEFAULT NULL,
+  "SalesDocumentRjcnReason"        varchar(2) DEFAULT NULL,
+  "WBSElement"                     varchar(24) DEFAULT NULL,
+  "ProfitCenter"                   varchar(10) DEFAULT NULL,
+  "ReferenceSDDocument"            varchar(10) DEFAULT NULL,
+  "ReferenceSDDocumentItem"        varchar(6) DEFAULT NULL,
+  "SDProcessStatus"                varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`SalesQuotation`, `SalesQuotationItem`)
+  CONSTRAINT `SalesQuotation_fk` FOREIGN KEY (`SalesQuotation`) REFERENCES `sap-sales-quotation-header-data` (`SalesQuotation`)
+) ENGINE = InnoDB
+DEFAULT CHARSET = utf8mb4;
