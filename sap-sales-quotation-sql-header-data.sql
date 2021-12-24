@@ -1,6 +1,6 @@
 CREATE TABLE `sap-sales-quotation-header-data`
 (
-  `SalesQuotation`                  varchar(10) DEFAULT NULL,
+  `SalesQuotation`                  varchar(10) NOT NULL,
   `SalesQuotationType`              varchar(4) DEFAULT NULL,
   `SalesOrganization`               varchar(4) DEFAULT NULL,
   `DistributionChannel`             varchar(2) DEFAULT NULL,
