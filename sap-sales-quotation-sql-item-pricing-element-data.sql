@@ -1,12 +1,12 @@
-CREATE TABLE `sap-sales-quotation-pricing-element-data`
+CREATE TABLE `sap_sales_quotation_item_pricing_element_data`
 (
   `SalesQuotation`                  varchar(10) NOT NULL,
   `SalesQuotationItem`              varchar(6) NOT NULL,
   `PricingProcedureStep`            varchar(3) NOT NULL,
   `PricingProcedureCounter`         varchar(3) NOT NULL,
   `ConditionType`                   varchar(4) DEFAULT NULL,
-  `PricingDateTime`                 datetime DEFAULT NULL,
-  `PriceConditionDeterminationDte`  date DEFAULT NULL,
+  `PricingDateTime`                 varchar(80) DEFAULT NULL,
+  `PriceConditionDeterminationDte`  varchar(80) DEFAULT NULL,
   `ConditionCalculationType`        varchar(3) DEFAULT NULL,
   `ConditionBaseValue`              varchar(13) DEFAULT NULL,
   `ConditionRateValue`              varchar(13) DEFAULT NULL,
@@ -26,6 +26,6 @@ CREATE TABLE `sap-sales-quotation-pricing-element-data`
   `ConditionScaleBasisCurrency`     varchar(5) DEFAULT NULL,
   `ConditionIsManuallyChanged`      tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`SalesQuotation`, `SalesQuotationItem`, `PricingProcedureStep`, `PricingProcedureCounter`),
-  CONSTRAINT `SalesQuotation_fk` FOREIGN KEY (`SalesQuotation`) REFERENCES `sap-sales-quotation-header-data` (`SalesQuotation`)
+  CONSTRAINT `SAPSalesQuotationItemPricingElementData_fk` FOREIGN KEY (`SalesQuotation`) REFERENCES `sap_sales_quotation_header_data` (`SalesQuotation`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

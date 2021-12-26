@@ -1,4 +1,4 @@
-CREATE TABLE `sap-sales-quotation-item-data`
+CREATE TABLE `sap_sales_quotation_item_data`
 (
   `SalesQuotation`                 varchar(10) NOT NULL,
   `SalesQuotationItem`             varchar(6) NOT NULL,
@@ -31,6 +31,6 @@ CREATE TABLE `sap-sales-quotation-item-data`
   `ReferenceSDDocumentItem`        varchar(6) DEFAULT NULL,
   `SDProcessStatus`                varchar(1) DEFAULT NULL,
   PRIMARY KEY (`SalesQuotation`, `SalesQuotationItem`)
-  CONSTRAINT `SalesQuotation_fk` FOREIGN KEY (`SalesQuotation`) REFERENCES `sap-sales-quotation-header-data` (`SalesQuotation`)
+  CONSTRAINT `SAPSalesQuotationItemData_fk` FOREIGN KEY (`SalesQuotation`) REFERENCES `sap_sales_quotation_header_data` (`SalesQuotation`)
 ) ENGINE = InnoDB
 DEFAULT CHARSET = utf8mb4;
